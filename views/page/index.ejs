@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link al CSS -->
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo"><h1>My Blog</h1></div>
+            <div class="btn-add"><a href="/add-post">Crear Publicación</a></div>
+        </div>
+        <div class="session">
+            <h2>Hola, Usuario.</h2>
+            <img src="/public/perfil.png" alt="">
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div class="posts-container">
+            <% if (posts.length > 0) { %>
+                <% posts.forEach(post => { %>
+                    <div class="post">
+                        <% if (post.titulo && post.contenido) { %>
+                            <button id="<%= post.id %>">Ver publicación</button>
+                            <h1><%= post.titulo %></h1>
+                            <% const fecha = new Date(post.fecha); %>
+                            <p>Fecha de publicación: <%= fecha.toLocaleString() %></p>
+                            <p><%= post.contenido %></p>
+                        <% } %>
+                    </div>
+                <% }); %>
+            <% }; %>
+        </div>
+    </main>
+</body>
+</html>

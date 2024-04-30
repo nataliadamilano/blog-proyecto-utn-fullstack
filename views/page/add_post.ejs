@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link al CSS -->
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo"><h1>My Blog</h1></div>
+            <div class="btn-add"><a href="/add-post">Crear Publicación</a></div>
+        </div>
+        <div class="session">
+            <h2>Hola, Usuario.</h2>
+            <img src="/public/perfil.png" alt="">
+        </div>
+    </header>
+    <hr>
+    <section class="add-post">
+        <div class="form-container">
+            <h2 class="add-post">Agrega una nueva publicación</h2>
+            <form action="" method="post">
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" required placeholder="Ingrese un título...">
+                <label for="contenido">Contenido:</label>
+                <input type="textarea" name="contenido" required placeholder="Comience a escribir su publicación aquí...">
+                <button class="btn">Crear</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
