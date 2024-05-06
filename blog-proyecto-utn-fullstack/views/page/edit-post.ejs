@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link al CSS -->
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('header') %>
+    <hr>
+    <section class="edit-post">
+        <div class="form-container">
+            <h2 class="edit-post">Editar publicación</h2>
+            <form action="/edit-post/<%= postId %>" method="POST">
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" required placeholder="Ingrese un título...">
+                <label for="contenido">Contenido:</label>
+                <input type="textarea" name="contenido" required placeholder="Comience a escribir su publicación aquí...">
+                <button class="btn">Editar</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

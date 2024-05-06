@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link al CSS -->
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('header') %>
+    <hr>
+    <main>
+        <div class="posts-container">
+            <% if (posts) { %>
+                <% posts.forEach(post => { %>
+                    <a href="/mostrar-editar/<%= post.id %>">
+                    <div class="post">
+                        <% if (post.titulo && post.contenido) { %>
+                                <h1><%= post.titulo %></h1>
+                                <% const fecha = new Date(post.fecha); %>
+                                <p>Fecha de publicación: <%= fecha.toLocaleString() %></p>
+                                <p><%= post.contenido %></p>
+                                <% } %>
+                            </div>
+                        </a>
+                <% }); %>
+            <% } %>
+        </div>
+    </main>
+
+</body>
+</html>
